@@ -1,0 +1,21 @@
+{
+  "name": "reyclouddev-topup",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev",
+    "build": "echo Build Complete"
+  },
+  "dependencies": {
+    "cloudinary": "^2.7.0",
+    "dotenv": "^17.2.1",
+    "formidable": "^3.5.4",
+    "mongodb": "^6.18.0",
+    "resend": "^4.7.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
