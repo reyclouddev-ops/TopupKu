@@ -140,29 +140,42 @@ Tolak
 
 });
 
-function changeStatus(invoice,status){
+async function changeStatus(invoice, status){
 
-document.getElementById(invoice).innerText =
-status;
+    document.getElementById(invoice).innerText = status;
 
-/*
-Part berikutnya:
+    // Nanti ambil data order dari database
+    const order = demoOrders.find(x => x.invoice === invoice);
 
-POST /api/admin-update
+    await fetch("/api/admin-update",{
 
-↓
+        method:"POST",
 
-MongoDB
+        headers:{
+            "Content-Type":"application/json"
+        },
 
-↓
+        body:JSON.stringify({
 
-Telegram
+            invoice,
 
-↓
+            username:order.username,
 
-Resend
+            email:"reyclouddev@gmail.com", // nanti dari database
 
-*/
+            product:order.product,
+
+            price:order.price,
+
+            status
+
+        })
+
+    });
+
+    alert("Status berhasil diperbarui.");
+
+}
 
 }
 
