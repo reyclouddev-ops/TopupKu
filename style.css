@@ -1,0 +1,243 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#0d1117;
+color:#fff;
+}
+
+.header{
+background:#161b22;
+padding:30px;
+text-align:center;
+border-bottom:1px solid #30363d;
+}
+
+.header h1{
+font-size:32px;
+color:#58a6ff;
+margin-bottom:8px;
+}
+
+.header p{
+color:#8b949e;
+}
+
+.banner{
+padding:20px;
+text-align:center;
+}
+
+.banner h2{
+font-size:26px;
+}
+
+.products{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+.category{
+margin-bottom:35px;
+}
+
+.category h2{
+margin-bottom:15px;
+color:#58a6ff;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+}
+
+.card{
+background:#161b22;
+border:1px solid #30363d;
+border-radius:14px;
+padding:18px;
+transition:.25s;
+cursor:pointer;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:#58a6ff;
+box-shadow:0 0 18px rgba(88,166,255,.35);
+}
+
+.card h3{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.card p{
+color:#58a6ff;
+font-size:18px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.card button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#238636;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.2s;
+}
+
+.card button:hover{
+background:#2ea043;
+}
+
+.checkout{
+max-width:700px;
+margin:40px auto;
+padding:25px;
+background:#161b22;
+border:1px solid #30363d;
+border-radius:15px;
+}
+
+.checkout h2{
+margin-bottom:20px;
+}
+
+.checkout input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+background:#0d1117;
+border:1px solid #30363d;
+border-radius:10px;
+color:white;
+font-size:16px;
+}
+
+.checkout button{
+width:100%;
+padding:15px;
+background:#238636;
+border:none;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+transition:.2s;
+}
+
+.checkout button:hover{
+background:#2ea043;
+}
+
+.payment{
+max-width:700px;
+margin:40px auto;
+padding:25px;
+background:#161b22;
+border-radius:15px;
+border:1px solid #30363d;
+text-align:center;
+}
+
+.payment h2{
+margin-bottom:20px;
+}
+
+.payment p{
+margin:10px 0;
+font-size:18px;
+}
+
+#qris{
+width:300px;
+max-width:100%;
+margin:20px 0;
+border-radius:12px;
+border:2px solid #30363d;
+}
+
+#proof{
+width:100%;
+padding:12px;
+background:#0d1117;
+border:1px solid #30363d;
+border-radius:10px;
+color:white;
+margin-top:15px;
+}
+
+#uploadBtn{
+margin-top:15px;
+width:100%;
+padding:15px;
+background:#58a6ff;
+border:none;
+border-radius:10px;
+font-size:17px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+}
+
+#uploadBtn:hover{
+background:#388bfd;
+}
+
+#gamepassInfo{
+margin-top:25px;
+padding:20px;
+background:#0d1117;
+border:1px solid #30363d;
+border-radius:12px;
+}
+
+#gamepassInfo a{
+display:inline-block;
+margin-top:10px;
+padding:10px 18px;
+background:#238636;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+#gamepassInfo a:hover{
+background:#2ea043;
+}
+
+.hidden{
+display:none;
+}
+
+@media(max-width:768px){
+
+.header h1{
+font-size:26px;
+}
+
+.banner h2{
+font-size:22px;
+}
+
+.card h3{
+font-size:18px;
+}
+
+.checkout,
+.payment{
+margin:20px;
+}
+
+}
