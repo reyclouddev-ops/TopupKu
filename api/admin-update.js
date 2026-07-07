@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { connectDB } from "../lib/mongodb.js";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -28,6 +29,30 @@ export default async function handler(req, res) {
         // EMAIL KE USER
         // ==========================
 
+        const db = await connectDB();
+
+await db.collection("orders").updateOne(
+
+{
+
+invoice
+
+},
+
+{
+
+$set:{
+
+status,
+
+updatedAt:new Date()
+
+}
+
+}
+
+);
+
         await resend.emails.send({
 
             from: "ReyCloudDev <onboarding@resend.dev>",
@@ -37,7 +62,7 @@ export default async function handler(req, res) {
             subject: `Status Pesanan ${invoice}`,
 
             html: `
-            <h2>ReyCloudDev</h2>
+            <h2>TopUpKu</h2>
 
             <p>Halo <b>${username}</b></p>
 
