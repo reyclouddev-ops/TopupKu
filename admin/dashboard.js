@@ -45,35 +45,17 @@ result.message;
 
 }
 
-const demoOrders = [
+const response =
+await fetch("/api/orders");
 
-{
+const orders =
+await response.json();
 
-invoice:"RCD-8A12BCDE",
+orders.forEach(order=>{
 
-username:"acuyykernzz",
+// tampilkan tabel
 
-product:"80 Robux",
-
-price:17000,
-
-status:"Pending"
-
-},
-
-{
-
-invoice:"RCD-5ZX71QWE",
-
-username:"Player123",
-
-product:"Police Pass",
-
-price:18000,
-
-status:"Pending"
-
-}
+});
 
 ];
 
