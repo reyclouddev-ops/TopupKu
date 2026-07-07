@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReyCloudDev Top Up</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+
+    <h1>⚡ ReyCloudDev</h1>
+
+    <p>Top Up Robux & Game Pass Roblox</p>
+
+</header>
+
+<section class="banner">
+
+    <h2>🔥 Pilih Produk</h2>
+
+</section>
+
+<div id="products" class="products">
+
+    <!-- BEST SELLER -->
+
+    <div class="category">
+        <h2>💎 Robux Best Seller</h2>
+
+        <div id="bestSeller"></div>
+    </div>
+
+    <!-- REGULER -->
+
+    <div class="category">
+        <h2>💰 Robux Reguler</h2>
+
+        <div id="reguler"></div>
+    </div>
+
+    <!-- GAMEPASS -->
+
+    <div class="category">
+        <h2>🎮 Game Pass</h2>
+
+        <div id="gamepass"></div>
+    </div>
+
+</div>
+
+<section class="checkout">
+
+<h2>🛒 Checkout</h2>
+
+<form id="checkoutForm">
+
+<input
+type="text"
+id="username"
+placeholder="Username Roblox"
+required>
+
+<input
+type="email"
+id="email"
+placeholder="Email"
+required>
+
+<input
+type="hidden"
+id="selectedProduct">
+
+<input
+type="hidden"
+id="selectedPrice">
+
+<button type="submit">
+
+Checkout
+
+</button>
+
+</form>
+
+</section>
+
+<section
+id="paymentPage"
+class="payment hidden">
+
+<h2>💳 Pembayaran</h2>
+
+<p>
+
+Invoice :
+<span id="invoice"></span>
+
+</p>
+
+<p>
+
+Produk :
+<span id="produk"></span>
+
+</p>
+
+<p>
+
+Total :
+<span id="harga"></span>
+
+</p>
+
+<img
+id="qris"
+src="assets/qris.jpg"
+alt="QRIS">
+
+<h3>Upload Bukti Pembayaran</h3>
+
+<input
+type="file"
+id="proof"
+accept="image/*">
+
+<button
+id="uploadBtn">
+
+Kirim Bukti
+
+</button>
+
+<div
+id="gamepassInfo"
+class="hidden">
+
+<h3>🎮 Langkah Game Pass</h3>
+
+<p>
+
+1. Join Private Server
+
+</p>
+
+<a
+href="https://www.roblox.com/share?code=0ee09a5b203cf540a606ecd2957468ea&type=Server"
+target="_blank">
+
+Join Server
+
+</a>
+
+<br><br>
+
+<p>
+
+2. Tambahkan Akun
+
+</p>
+
+<a
+href="https://www.roblox.com/share?code=45d17a97ed81a541a92f3211d828cacf&type=Profile&source=ProfileShare&stamp=1783438694951"
+target="_blank">
+
+Add Friend
+
+</a>
+
+</div>
+
+</section>
+
+<script src="products.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
