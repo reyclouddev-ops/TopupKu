@@ -1,46 +1,90 @@
+import formidable from "formidable";
 import cloudinary from "../lib/cloudinary.js";
+
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
+function parseForm(req) {
+  return new Promise((resolve, reject) => {
+
+    const form = formidable({
+      multiples: false,
+      keepExtensions: true,
+    });
+
+    form.parse(req, (err, fields, files) => {
+
+      if (err) {
+        reject(err);
+        return;
+      }
+
+      resolve({
+        fields,
+        files,
+      });
+
+    });
+
+  });
+}
 
 export default async function handler(req, res) {
 
   if (req.method !== "POST") {
     return res.status(405).json({
       success: false,
-      message: "Method tidak diizinkan"
     });
   }
 
   try {
 
-    /*
-      Pada langkah berikutnya (Part 5.2C),
-      file upload dari form akan dibaca
-      menggunakan formidable.
+    const { fields, files } = await parseForm(req);
 
-      Setelah didapat path file sementara,
-      simpan ke variabel filePath.
-    */
+    const proof = files.proof;
 
-    const filePath = req.body.filePath;
-
-    if (!filePath) {
+    if (!proof) {
       return res.status(400).json({
         success: false,
-        message: "File belum ditemukan."
+        message: "Bukti pembayaran belum dipilih."
       });
     }
 
-    const result = await cloudinary.uploader.upload(filePath, {
-      folder: "reyclouddev/payment-proof",
-      resource_type: "image"
-    });
+    const upload = await cloudinary.uploader.upload(
+      proof.filepath,
+      {
+        folder: "ReyCloudDev/PaymentProof",
+      }
+    );
 
     return res.status(200).json({
+
       success: true,
-      imageUrl: result.secure_url,
-      publicId: result.public_id
+
+      image: upload.secure_url,
+
+      publicId: upload.public_id,
+
+      invoice: fields.invoice,
+
+      username: fields.username,
+
+      email: fields.email,
+
+      product: fields.product,
+
+      price: fields.price,
+
+      type: fields.type
+
     });
 
   } catch (err) {
+
+    console.error(err);
 
     return res.status(500).json({
       success: false,
